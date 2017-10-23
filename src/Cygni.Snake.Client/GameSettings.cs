@@ -64,5 +64,26 @@ namespace Cygni.Snake.Client
         /// </summary>
         [JsonProperty("removeFoodLikelihood")]
         public int RemoveFoodLikelihood { get; set; } = 5;
+
+        [JsonProperty("spontaneousGrowthEveryNWorldTick")]
+        public int SpontaneousGrowthEveryNWorldTick { get; set; } = 3;
+
+        [JsonProperty("trainingGame")]
+        public bool TrainingGame { get; set; } = false;
+
+        [JsonProperty("pointsPerLength")]
+        public int PointsPerLength { get; set; } = 1;
+
+        [JsonProperty("pointsPerFood")]
+        public int PointsPerFood { get; set; } = 2;
+
+        [JsonProperty("pointsPerCausedDeath")]
+        public int PointsPerCausedDeath { get; set; } = 10;
+
+        [JsonProperty("pointsPerNibble")]
+        public int PointsPerNibble { get; set; } = 5;
+
+        [JsonProperty("noofRoundsTailProtectedAfterNibble")]
+        public int NoOfRoundsTailProtectedAfterNibble { get; set; } = 3;
     }
 }
