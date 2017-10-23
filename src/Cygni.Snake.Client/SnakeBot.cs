@@ -29,6 +29,13 @@
         public bool AutoStart { get; set; }
 
         /// <summary>
+        /// Called by the client on game start to allow this bot to inspect the
+        /// current <see cref="GameSettings"/> and possibly do further initialization.
+        /// </summary>
+        /// <param name="settings">The <see cref="GameSettings"/> specified by the server when starting the game.</param>
+        public abstract void OnGameStart(GameSettings settings);
+
+        /// <summary>
         /// When overriden in a derived class, gets the <see cref="Direction"/>
         /// in which this bot wants to move based on the specified <see cref="Map"/>.
         /// </summary>

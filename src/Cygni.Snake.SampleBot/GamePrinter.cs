@@ -9,7 +9,7 @@ namespace Cygni.Snake.SampleBot
 {
     public class GamePrinter : IGameObserver
     {
-        public void OnGameStart()
+        public void OnGameStart(GameSettings settings)
         {
             Task.Run(() =>
             {

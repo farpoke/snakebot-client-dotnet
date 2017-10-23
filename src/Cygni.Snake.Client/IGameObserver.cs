@@ -16,7 +16,7 @@
         /// <summary>
         /// Notifies this observer that a new game has started.
         /// </summary>
-        void OnGameStart();
+        void OnGameStart(GameSettings settings);
 
         /// <summary>
         /// Notifies this observer that the game has ended.

@@ -122,7 +122,7 @@ namespace Cygni.Snake.Client
             switch (messageType)
             {
                 case MessageType.GameStarting:
-                    OnGameStarting();
+                    OnGameStarting(snake, json);
                     break;
 
                 case MessageType.GameEnded:
@@ -182,9 +182,11 @@ namespace Cygni.Snake.Client
                 $"The given player name '{snake.Name}' is not valid because. Reason: {reason}");
         }
 
-        private void OnGameStarting()
+        private void OnGameStarting(SnakeBot snake, JObject json)
         {
-            _observer.OnGameStart();
+            var settings = json["gameSettings"].ToObject<GameSettings>();
+            _observer.OnGameStart(settings);
+            snake.OnGameStart(settings);
         }
 
         private void OnSnakeDead(JObject json)
@@ -314,7 +316,7 @@ namespace Cygni.Snake.Client
             {
             }
 
-            public void OnGameStart()
+            public void OnGameStart(GameSettings settings)
             {
             }
 
